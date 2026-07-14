@@ -8,18 +8,20 @@ namespace WebApplication1.Models;
 public class Medico
 {
     
-    public UniqueId Id;
+    public int Id { get; set; }
     public string Nome { get; set; }
     public string Crm { get; set; }
-    public DateTime DataNascimento { get; set; }
+    public DateOnly DataNascimento { get; set; }
     public Especialidade  Especialidade { get; set; }
+    public int EspecialidadeId { get; set; }
 
 
-    public Medico(string nome, DateTime dataNascimento, Especialidade esp, string crm)
+
+    public Medico(string nome, DateOnly dataNascimento, int EspecialidadeId, string crm)
     {
         this.Nome = nome;
         this.DataNascimento = dataNascimento;   
-        this.Especialidade = esp;
+        this.EspecialidadeId = EspecialidadeId;
         this.Crm = crm ; 
     }
 }
